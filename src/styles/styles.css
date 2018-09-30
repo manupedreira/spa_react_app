@@ -1,0 +1,242 @@
+@import url(fonts/font_less.css);
+@import url(fonts/font_noto_serif.css);
+
+* {
+  border: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #282828;
+  font-size: 14px;
+  font-family: lessregular;
+}
+
+h1 {
+  position: relative;
+  top: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+h3 {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+.full-sized {
+  width: 100%;
+  height: 100%;
+}
+
+.full-parent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  flex: 0 0 40px;
+  width: 100%;
+  border-bottom: 2px solid #282828;
+}
+
+.logo {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  right: 10px;
+  bottom: -2px;
+  margin: 0;
+  padding: 0 2px;
+  background: #fff;
+}
+
+.articles {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.articles li {
+  display: flex;
+  min-width: 320px;
+  max-width: 480px;
+  min-height: 240px;
+  max-height: 300px;
+  flex-basis: 25%;
+  padding: 10px;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  top: 10px;
+  width: 100%;
+  display: inline-block;
+  min-height: 82px;
+  opacity: 0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  color: #282828;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.card.animated {
+  top: 0px;
+  opacity: 1;
+}
+
+.card:hover {
+  top: -5px;
+  box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card .plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.article h2,
+.addArticle h2,
+.tag-list,
+.addArticle div:not(.button-container) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.article p,
+.addArticle p {
+  flex: 0 0 auto;
+  margin: 0 5px 0 0;
+}
+
+.article h2 strong,
+.tag-list strong,
+.addArticle input:not([type='radio']),
+.addArticle textarea {
+  flex: 1 1 50%;
+}
+
+.article div,
+.addArticle div {
+  margin-bottom: 20px;
+}
+
+.addArticle p {
+  flex-basis: 65px;
+  padding-top: 5px;
+}
+
+.addArticle input,
+.addArticle textarea {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px;
+}
+
+.addArticle textarea {
+  overflow-y: scroll;
+}
+
+.button-container {
+  text-align: center;
+}
+
+.button-container span {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  margin: 0 5px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.button-container span:not(.disabled) {
+  cursor: pointer;
+}
+
+.button-container span:not(.disabled):hover,
+.button-container span.disabled {
+  opacity: 0.5;
+}
+
+.button-container .edit .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  color: #282828;
+  font-size: 3.4em;
+}
+
+.button-container .delete,
+.button-container .save {
+  background: #282828;
+}
+
+.button-container .delete .fas,
+.button-container .save .fas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  color: #fff;
+  font-size: 1.8em;
+}
+
+.footer {
+  width: 100%;
+  height: 30px;
+}
+
+.footer a {
+  float: right;
+  color: #565656;
+  line-height: 30px;
+  transition: 0.5s all ease;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
